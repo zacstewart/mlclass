@@ -23,8 +23,26 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+% steps = [ 0.01 0.03 0.1 0.3 1 3 10 30 ]
+% iter = 1;
+% errors = zeros(64, 3);
+% for i=1:8,
+%   tmp_C = steps(i)
+%   for j=1:8,
+%     tmp_sigma = steps(j);
+%     model = svmTrain(X, y, tmp_C, @(x1, x2) gaussianKernel(x1, x2, tmp_sigma));
+%     predictions = svmPredict(model, Xval);
+%     errors(iter, :) = [ tmp_C tmp_sigma mean(double(predictions ~= yval)) ];
+%     disp(errors(iter, :));
+%     iter = iter + 1
+%   end;
+% end;
+
+% disp errors;
 
 
+C = 1;
+sigma = 0.10;
 
 
 
